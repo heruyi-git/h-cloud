@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pool>
+<!-- more dataSouce config jta test-->
+<pool load="phoneauth2">
+
+	<dataSource name="phoneauth" type="org.uyi.h.dao.pool.DbcpConnectionPool">
+		<dirverClassName>com.mysql.cj.jdbc.Driver</dirverClassName>
+		<url>jdbc:mysql://127.0.0.1:3306/phoneauth?useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=Asia/Shanghai&amp;useSSL=false</url>
+		<username>root</username>
+		<password>123456</password>
+		<initialSize>1</initialSize>
+		<!-- 高并发maxActive=maxIdle=20 -->
+		<maxActive>500</maxActive>
+		<maxIdle>500</maxIdle>
+		<!-- 高并发此处配置和minIdle=initialSize -->
+		<minIdle>1</minIdle>
+		<maxWait>30000</maxWait>
+		<testWhileIdle>true</testWhileIdle>
+		<timeBetweenEvictionRunsMillis>360000</timeBetweenEvictionRunsMillis>
+		<minEvictableIdleTimeMillis>1800000</minEvictableIdleTimeMillis>
+		<!-- 高并发numTestsPerEvictionRun=maxIdle -->
+		<numTestsPerEvictionRun>500</numTestsPerEvictionRun>
+		<showSql>true</showSql>
+		<autoExcuteSql load="">
+			<fileInit>static/doc/db/phoneauth.sql</fileInit>
+			<fileUpdate>static/doc/db/update/*.sql</fileUpdate>
+			<entityInit>org.uyi.h.dao.base.dal.entity.*</entityInit>
+			<entityAdd>com.able.abauth.common.mvc.dal.entity.*,com.able.abauth.backoffice.dal.entity.*</entityAdd>
+		</autoExcuteSql>
+	</dataSource>
+
+	<dataSource name="phoneauth2" type="org.uyi.h.dao.pool.DruidConnectionPool">
+		<dirverClassName>com.mysql.cj.jdbc.Driver</dirverClassName>
+		<url>jdbc:mysql://127.0.0.1:3306/phoneauth?useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=Asia/Shanghai&amp;useSSL=false</url>
+		<username>root</username>
+		<password>123456</password>
+		<initialSize>1</initialSize>
+		<!-- 高并发maxActive=maxIdle=20 -->
+		<maxActive>20</maxActive>
+		<maxIdle>20</maxIdle>
+		<!-- 高并发此处配置和minIdle=initialSize -->
+		<minIdle>1</minIdle>
+		<maxWait>30000</maxWait>
+		<!-- 开启WEB监控同时需要配置druid过滤器 -->
+		<enableMonitor>true</enableMonitor>
+		<showSql>false</showSql>
+		<autoExcuteSql load="">
+			<fileInit>static/doc/db/phoneauth.sql</fileInit>
+			<fileUpdate>static/doc/db/update/*.sql</fileUpdate>
+			<entityInit>org.uyi.h.dao.base.dal.entity.*</entityInit>
+			<entityAdd>com.able.abauth.common.mvc.dal.entity.*,com.able.abauth.backoffice.dal.entity.*</entityAdd>
+		</autoExcuteSql>
+	</dataSource>
+
+</pool>
+

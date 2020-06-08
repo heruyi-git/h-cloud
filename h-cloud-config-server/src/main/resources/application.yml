@@ -1,0 +1,19 @@
+server:
+  port: 8981
+
+spring:
+  application:
+    name: config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/abletele/config-repo  # 远程git仓库的地址
+          username: heruyipapa@163.com  # 以及相应的账户名
+          password: heruyi.git123  # 和密码
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/,http://localhost:8762/eureka/
+
