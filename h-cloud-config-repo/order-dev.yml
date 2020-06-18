@@ -1,0 +1,3 @@
+server:
+  port: 8182
+  # 集群：远程只有一个order.yml，走的是order.yml合并order-dev.yml

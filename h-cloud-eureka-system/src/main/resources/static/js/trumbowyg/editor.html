@@ -1,0 +1,23 @@
+
+<html>
+<head>
+    <link rel="shortcut icon" href="#" />
+    <style>
+       body{
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <script>var path = "";</script>
+    <script type="text/javascript" src="/static/easyui/jquery-1.8.0.min.js"></script>
+    <script src="/static/js/trumbowyg/trumbowyg-all.js"></script>
+</head>
+
+<body>
+    <form id="fm" method="post" action="/admin/common/commonFile/doEdit.json">
+        <input type="hidden" name="filePath"/>
+        <textarea id="content" name="content" class="editor" cols="22" rows="12"></textarea>
+    </form>
+    <script src="/static/js/trumbowyg/config.js"></script>
+</body>
+</html>

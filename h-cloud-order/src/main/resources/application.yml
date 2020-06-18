@@ -1,14 +1,14 @@
-server:
-  port: 8083
+# 此文件可以不要，在此只是示例，直接引用远程GIT配置
+
 
 spring:
   application:
-    name: spring-cloud-ribbon
+    name: service-order
 
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/,http://localhost:8762/eureka/
+      defaultZone: http://localhost:8761/eureka/,http://${spring.cloud.client.ip-address}:8762/eureka/
 
   instance:
     #服务过期时间配置,超过这个时间没有接收到心跳EurekaServer就会将这个实例剔除

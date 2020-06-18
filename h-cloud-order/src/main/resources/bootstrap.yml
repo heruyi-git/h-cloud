@@ -1,0 +1,14 @@
+server:
+  port: 8181
+
+spring:
+  cloud:
+    config:
+      name: order
+      label: master
+      profile: default
+      discovery:
+        enabled: true
+        service-id: config-server
+      
+      

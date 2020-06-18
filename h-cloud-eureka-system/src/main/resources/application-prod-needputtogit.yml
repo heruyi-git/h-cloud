@@ -1,0 +1,8 @@
+# 对应远程system-prod.yml
+server:
+  port: 8082 #8082 8083
+  context-path: /
+hfast:
+  config-file:
+    pool: config/pool-prod.xml
+    global: config/global.properties

@@ -1,0 +1,15 @@
+server:
+  port: 8081 #8082 8083
+  context-path: /
+  session-timeout: 1800
+
+hfast:
+  config-file:
+    pool: config/pool-dev.xml
+    global: config/global.properties
+
+
+
+
+
+

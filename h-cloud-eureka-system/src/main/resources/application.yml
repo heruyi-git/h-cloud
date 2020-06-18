@@ -1,11 +1,6 @@
-server:
-  port: 8081 #8082 8083
-
 spring:
   application:
     name: service-system
-  profiles:
-    active: dev
 
 eureka:
   instance:
@@ -22,6 +17,17 @@ eureka:
     #默认30s
     registryFetchIntervalSeconds: 5
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/,http://localhost:8762/eureka/
+      defaultZone: http://localhost:8761/eureka/,http://${spring.cloud.client.ip-address}:8762/eureka/
 
+info:
+  app:
+    name: "服务调用"
+    description: "@project.description@"
+    version: "@project.version@"
+    spring-boot-version: "@project.parent.version@"
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'  #SpringBootActuator监控暴露所有接口
 

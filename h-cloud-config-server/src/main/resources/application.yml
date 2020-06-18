@@ -1,15 +1,18 @@
 server:
-  port: 8981
+  port: 7761
 
 spring:
   application:
-    name: config
+    name: config-server
   cloud:
     config:
+      label: master
       server:
         git:
-          uri: https://gitee.com/abletele/config-repo  # 远程git仓库的地址
-          username: heruyipapa@163.com  # 以及相应的账户名
+          uri: https://github.com/heruyi-git/h-cloud
+          search-paths: h-cloud-config-repo
+          #uri: https://gitee.com/abletele/config-repo  # 远程git仓库的地址
+          username: heruyipapa@163.com  # 以及相应的账户名,公开库可不填写
           password: heruyi.git123  # 和密码
 
 eureka:

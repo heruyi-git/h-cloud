@@ -1,0 +1,44 @@
+spring:
+  application:
+    name: service-order
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/,http://${spring.cloud.client.ip-address}:8762/eureka/
+
+  instance:
+    #服务过期时间配置,超过这个时间没有接收到心跳EurekaServer就会将这个实例剔除
+    #注意，EurekaServer一定要设置eureka.server.eviction-interval-timer-in-ms否则这个配置无效，这个配置一般为服务刷新时间配置的三倍
+    #默认90s
+    lease-expiration-duration-in-seconds: 15
+    #服务刷新时间配置，每隔这个时间会主动心跳一次
+    #默认30s
+    lease-renewal-interval-in-seconds: 5
+    preferIpAddress: true
+  ribbon:
+    #eureka客户端ribbon刷新时间
+    #默认30s
+    ServerListRefreshInterval: 1000
+feign:
+  hystrix:
+    enabled: true
+  httpclient:
+    enabled: true
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: false
+ribbon:
+  ReadTimeout: 5000
+  ConnectTimeout: 5000
+
+#springCloud默认的负载均衡策略是轮询
+service-system:  #被调用的服务名（注册中心注册的服务名）
+  ribbon:   #负载均衡策略  权重
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.WeightedResponseTimeRule
+
+#启用熔断
+feign.hystrix.enabled: true

@@ -1,6 +1,6 @@
 @echo off
 chcp 65001
-title 系统服务日志控制台
+title 8081系统服务
 
 rem ======================================================================
 rem windows startup script

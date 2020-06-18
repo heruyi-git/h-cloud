@@ -1,7 +1,0 @@
-server:
-  port: 8081
-  context-path: /
-hfast:
-  config-file:
-    pool: config/pool-prod.xml
-    global: config/global.properties

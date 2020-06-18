@@ -4,10 +4,10 @@
     <modelVersion>4.0.0</modelVersion>
     <modules>
         <module>h-cloud-eureka-server</module>
+        <module>h-cloud-config-server</module>
         <module>h-cloud-eureka-system</module>
         <module>h-cloud-order</module>
-        <module>h-cloud-config</module>
-        <module>h-cloud-config-server</module>
+        <module>h-cloud-gateway</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
