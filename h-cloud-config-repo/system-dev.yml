@@ -4,7 +4,7 @@ server:
   session-timeout: 1800
 
 hfast:
-  version: 5.0
+  version: 5.1
   config-file:
     pool: config/pool-dev.xml
     global: config/global.properties
