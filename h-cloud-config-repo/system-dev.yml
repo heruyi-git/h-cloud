@@ -1,7 +1,8 @@
 server:
   port: 8081 #8082 8083
-  context-path: /service-system
   session-timeout: 1800
+  servlet:
+    context-path: /service-system
 
 hfast:
   version: 5.1
