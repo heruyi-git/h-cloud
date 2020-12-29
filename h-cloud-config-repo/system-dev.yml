@@ -1,7 +1,7 @@
 server:
   port: 8081 #8082 8083
-  context-path: /
-  session-timeout: 1800
+  context-path: /service-system
+  session-timeout: 3800
 
 hfast:
   config-file:
