@@ -1,7 +1,10 @@
 server:
-  port: 8082
-  context-path: /
+  port: 8082 #8082 8083
+  session-timeout: 1800
+  servlet:
+    context-path: /
 hfast:
+  version: 5.2
   config-file:
     pool: config/pool-prod.xml
     global: config/global.properties
